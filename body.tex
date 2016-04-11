@@ -13,60 +13,49 @@
 }
 
 \myframe{
-  \ctr{História}
+  \begin{center}
+    \includegraphics[height=0.8\textheight]{img/collage.jpg}
+  \end{center}
+}
+
+\myframe{
+  \ctr{Introdução}
   \begin{itemize}
-    \item VELHOS;
+    \item Desde, pelo menos, 2600 AC;
     \item Alguns sofreram poucas alterações em 2000 anos;
-    \item Voltaram ao \emph{mainstream}.
-    \item São importantes na economia.
-    \item São importantes na computação.
-    \item São importantes na matemática.
-    \item São importantes na pedagogia.
+    \item Chegaram ao \emph{mainstream};
+    \item Aplicações na economia, computação, matemática e pedagogia.
+    \item Recreação; Estudos de comportamento; Gamificação; Ensino; Esportes;
+      Desafios; Puzzles;
   \end{itemize}
 }
 
-\subsection{Tipos}
+\section{Inteligência Artificial em Jogos}
 
-\myframetop{
-  \ctr{Tipos}
+\subsection{Introdução}
+
+\myframe{
+  \ctr{Inteligência Artificial}
   \begin{itemize}
-    \item Informação
-      \only<2>{ \\
-    {\bf Perfeita}: Jogo da velha, dama, xadrez, go,
-      futebol, vôlei, tênis. \\
-    {\bf Imperfeita}: Poker, dominó,
-    \emph{Monopoly}, Starcraft. }
-    \item Cooperativo
-      \only<3>{ \\
-        {\bf Sim}: RPGs, \emph{Forbidden Desert} \\
-        {\bf Não}: Muitos outros
-      }
-    \item Simetria
-      \only<4>{ \\
-        {\bf Simétrico}: A maioria. \\
-        {\bf Não}: \emph{Interpol}, Esconde-esconde.
-      }
-    \item Soma zero
-      \only<5>{ \\
-        {\bf Sim}: Muitos \\
-        {\bf Não}: Blackjack (21)
-      }
-    \item Simultaniedade (Real time vs Turn based)
-      \only<6>{ \\
-        {\bf Sim}: Grande parte dos esportes e jogos digitais. \\
-        {\bf Não}: Grande parte dos jogos de tabuleiro.
-      }
-    \item Determinismo
-      \only<7>{ \\
-        {\bf Há sorte}: Jogos com dados, baralhos, etc.\\
-        {\bf Não há}: Xadrez, Go, etc.
-      }
+    \item Replicação de um humano;
+    \item Limitações computacionais;
+    \item Limitações humanas;
+    \item Várias aplicações;
+    \item Interesse antigo.
   \end{itemize}
 }
 
-\section{Computador como jogador}
+\subsection{IA em Jogos}
 
-\subsection{Vencer}
+\myframe{
+  \ctr{IA em Jogos}
+  \begin{itemize}
+    \item Diversão e desafio;
+    \item Pacman;
+    \item Lógica;
+    \item Solução básica: Força bruta;
+  \end{itemize}
+}
 
 \myframe{
   \begin{center}
@@ -387,6 +376,7 @@
 }
 
 \myframe{
+  \ctr{Jogo da velha}
   \begin{itemize}
     \item $9! = 362880$ jogos.
     \item Mesmo assim um computador consegue realizar a verificação necessária
@@ -401,9 +391,8 @@
 \myframe{
   \ctr{Xadrez}
   \begin{itemize}
-    \item Abel, abra o xboard
     \item $\approx 10^{124}$ jogos
-    \item Impraticável (ou impossível ver todos os jogos)
+    \item Impraticável (ou impossível) ver todos os jogos
     \item Ainda assim, em 1996, \emph{Deep Blue} venceu o primeiro jogo
       contra Garry Kasparov (perdeu 3 e empatou 2). Em 1997, Deep Blue empatou 5
       e venceu 1. Deep Blue analisava até $2\times10^8$ posições por segundo.
@@ -432,14 +421,13 @@
     \item Por baixo, $\approx 10^{336}$ (de umas 150 jogadas, com uma 250
       opções).
     \item $361! \approx 10^{768}$
-    \item Abel, abra o qgo
   \end{itemize}
 }
 
 \myframe{
   \ctr{Muito mais difícil}
   \begin{itemize}
-    \item Muita mais possibilidades
+    \item Muito mais possibilidades
     \item As repercussões são maiores
     \item Uma estratégia local pode não ser boa globalmente
     \item Não é fácil avaliar uma posição
@@ -691,7 +679,7 @@
     \item Reconhecimento de padrões
     \item Inteligência Artificial
     \item Classificação, regressão, clusterização
-    \item Muitas maneiras
+    \item Reconhecimento de fala, de texto, tradução, conversa.
   \end{itemize}
 \end{frame}
 
@@ -717,8 +705,32 @@
       \draw[->] (\c) -- (\o) node[blue,near start] {$w^{(2)}_{\i}$};
     }
   }
+  \onslide<2->{
+    \foreach \y [count=\i] in {-1.5,-1.0,...,1.5} {
+      \node[red] at (-1.0,\y) {$x^{(\i)}$};
+      \node[blue] at (5.8,\y) {$y^{(\i)}$};
+      \pgfmathsetmacro{\j}{int(\i+2)}
+      \onslide<\j>{
+        \draw[red] (x1) -- (-0.5,\y) -- (x2);
+        \draw[blue] (y1) -- (4.5,\y);
+      }
+      \onslide<\j->{
+        \node[blue] at (5.0,\y) {$\hat{y}^{(\i)} \approx$};
+      }
+    }
+    \node[red] at (-1.5,2.0) {$\vdots$};
+    \node[blue] at (5.5,2.0) {$\vdots$};
+  }
 \end{tikzpicture}
 \end{center}
+}
+
+\myframetop{
+  \ctr{Redes Neurais}
+
+  \[ E(W) = \frac{1}{2}\sum_{i=1}^m(y_i - \hat{y}_i(W))^2 \]
+
+  \[ \min_W E(W) \]
 }
 
 \myframe{
@@ -766,11 +778,33 @@
 }
 
 \myframe{
+  \ctr{Exemplos}
+  \begin{itemize}
+    \item $x$ é uma imagem e $y$ é se tem um gato ou não;
+    \item $x$ é uma imagem de uma palavra, e $y$ é a palavra (OCR e reCAPTCHA);
+    \item $x$ é um tabuleiro, e $y$ é a próxima jogada.
+  \end{itemize}
+}
+
+\myframe{
   \ctr{Em Go}
   \begin{itemize}
-    \item Usa um banco de dados gigantesco para treinar
-    \item MCTS das melhores
-    \item Aumenta o banco de dados jogando com si mesmo
-    \item Projeto futuro: Não usar o banco de dados inicial
+    \item Usa um banco de dados gigantesco para treinar;
+    \item MCTS das melhores:
+    \item Aumenta o banco de dados jogando com si mesmo:
+    \item Projeto futuro: Não usar o banco de dados inicial.
+  \end{itemize}
+}
+
+\subsection{Projetos}
+
+\myframe{
+  \ctr{Projetos}
+  \begin{itemize}
+    \item Estudar teoria de jogos;
+    \item Estudar jogos educativos, ou gamificação da educação;
+    \item Machine Learning com algum jogo simples, como Asteroids;
+    \item Estudar Support Vector Machine, que cai em otimização;
+    \item Algoritmos genéticos.
   \end{itemize}
 }
